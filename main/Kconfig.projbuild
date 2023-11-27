@@ -1,0 +1,27 @@
+menu "Configurando interface I2S"
+
+    choice
+        bool "Protocolo de aquisição"
+        default USE_I2S_ACQUISITION
+        help
+            Protocolo de aquisição a ser usado (I2S/PDM).
+
+        config USE_I2S_ACQUISITION
+            bool "USE_I2S_ACQUISITION"
+        config USE_PDM_ACQUISITION
+            bool "USE_PDM_ACQUISITION"
+    endchoice
+    
+    config SERVER_IP_ADDR
+        string "IP do servidor"
+        default "127.0.0.1"
+        help
+            Endereço IP do servidor para receber dados de áudio.
+
+    config SERVER_PORT
+        int "Porta do servidor"
+        default 9999
+        help
+            Porta do servidor para receber dados de áudio.
+
+endmenu
